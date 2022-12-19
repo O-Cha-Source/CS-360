@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_margin="10dp"
+tools:context=".MainActivity">
+
+<EditText
+    android:id="@+id/itemInput"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:inputType="text"
+    android:maxLines="1"
+    android:textSize="30sp"
+    android:hint="@string/enter_an_item"
+    app:layout_constraintRight_toLeftOf="@+id/addButton"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<Button
+    android:id="@+id/addButton"
+    android:text="@string/add"
+    android:onClick="addButtonClick"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:textColor="@color/colorPrimaryDark"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/grid"
+    android:name="com.example.project_1.InventoryFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="80dp"
+    android:layout_marginBottom="80dp"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+    tools:context=".InventoryFragment"
+    tools:listitem="@layout/fragment_inventory" />
+
+<Button
+    android:id="@+id/downloadButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/download"
+    android:onClick="downloadButtonClick"
+    android:textColor="@color/colorPrimaryDark"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
